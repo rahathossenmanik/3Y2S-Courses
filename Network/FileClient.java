@@ -22,13 +22,11 @@ public class FileClient{
 		
 		pr.println(FileName);
 		pr.println(FileSize);
-		while(true) {
-			byte []filebyte = new byte[FileSize];
-			bis.read(filebyte, 0, filebyte.length);
-			os.write(filebyte, 0, filebyte.length);
-			System.out.println("Server Response: " + in.nextLine());
-			os.flush();
-			sock.close();
-		}
+		byte []filebyte = new byte[FileSize];
+		bis.read(filebyte, 0, filebyte.length);
+		os.write(filebyte, 0, filebyte.length);
+		System.out.println("Server Response: " + in.nextLine());
+		os.flush();
+		sock.close();
 	}
 }
