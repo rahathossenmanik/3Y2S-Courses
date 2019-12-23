@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    int m, n, i, j, k, l=0, e;
+    int m, n, i, j, k, l=0, e, r;
     cout<<"Enter Number of Processes: ";
     cin>>n;
     cout<<"Enter Number of Resources: ";
@@ -36,6 +36,7 @@ int main(){
     }
     cout<<endl;
 
+Safety:
     for(i=0; i<n; i++){
         for(j=0; j<n; j++){
             Flag = true;
@@ -66,10 +67,28 @@ int main(){
             cout<<"P["<<Sequence[i]<<"] ";
         }
     }
-    cout<<"Press 1 to Make a Request, Press 0 to End: ";
+    cout<<endl<<"Press 1 to Make a Request, Press 0 to End: ";
     cin>>e;
     if(e==1){
-
+        cout<<"Request for Process No (0-"<<n-1<<"): ";
+        cin>>r;
+        for(j=0; j<m; j++){
+            Available[j] = Available[j] + Allocation[r][j];
+            Work[j] = Available[j];
+        }
+        Unsafe = false;
+        l = 0;
+        cout<<"Enter Instances of Resources Allocated for P["<<r<<"]: ";
+        for(j=0; j<m; j++){
+            cin>>Allocation[r][j];
+            Need[r][j] = Max[r][j] - Allocation[r][j];
+            Available[j] = Available[j] - Allocation[r][j];
+            Work[j] = Available[j];
+        }
+        for(i=0; i<n; i++){
+            Finish[i] = 0;
+        }
+        goto Safety;
     }
     else return 0;
 }
