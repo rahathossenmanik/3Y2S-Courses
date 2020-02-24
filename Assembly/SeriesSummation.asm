@@ -2,7 +2,7 @@
 .STACK 100H
 .DATA
 X DB 80 DUP
-SIZE DB 0
+N DB 0
 
 .CODE      
 MOV AX, @DATA
@@ -11,10 +11,14 @@ MOV DS, AX
 MAIN PROC
     MOV SI, 0
     MOV AH, 1
+    INT 21H
+    MOV N, AL
+    MOV AL, 0
+    
     FOR: INT 21H
-        CMP AL, 0DH
-        JE EXIT
-        MOV X[SI], AL
+        CMP AL, N
+        JG EXIT
+        
         INC SI
         JMP FOR
         
