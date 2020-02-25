@@ -27,7 +27,6 @@ int main(){
         }
         else{
             frame[last]=refstr[i];
-            cout<<frame[last]<<endl;
             last++;
             if(last>=m)last=0;
             flag=false;
