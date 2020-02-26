@@ -46,4 +46,3 @@ int main(){
     cout<<endl<<"Average Turnaround Time : "<<time/n;
     return 0;
 }
-//http://avanthioslab.blogspot.com/2016/08/multi-level-queue-scheduling-algorithm.html
