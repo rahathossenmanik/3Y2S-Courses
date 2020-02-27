@@ -13,7 +13,7 @@ int main(){
         cin>>refstr[i];
     }
     for(i=0;i<m;i++){
-        frame[i]=0;
+        frame[i]=-1;
     }
     for(i=0;i<n;i++){
         for(j=0;j<m;j++){
@@ -25,12 +25,8 @@ int main(){
             last++;
             if(last>=m)last=0;
         }
-        else{
-            frame[last]=refstr[i];
-            last++;
-            if(last>=m)last=0;
-            flag=false;
-        }
+        else flag=false;
+        cout<<frame[0]<<" "<<frame[1]<<" "<<frame[2]<<endl;
     }
     cout<<"Number of Page Faults: "<<fault<<endl;
     return 0;

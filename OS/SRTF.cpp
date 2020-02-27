@@ -1,12 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
-int n, art[20], bt[20], wt[20], tat[20], avwt=0, avtat=0, i, j, index[20], itemp, temp,  small, serial=0, limit=0, minimum=0;
+int n, art[20], bt[20], wt[20], tat[20], avwt=0, avtat=0, i, j, k, index[20], itemp, temp,  small, serial=0, limit=0, minimum=0;
 
 int shortest(int m){
-    for(i=0;i<m;i++){
+    for(k=0;k<m;k++){
         if(minimum>bt[i])minimum=bt[i];
     }
-    for(i=0;i<m;i++){
+    for(k=0;k<m;k++){
         if(minimum==bt[i])return i;
     }
 }
