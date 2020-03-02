@@ -10,6 +10,8 @@ MOV DS, AX
 MAIN PROC
     MOV AH, 1
     INT 21H
+    CMP AL, 0
+    JE ZERO
     MOV N, AL
     SUB N, 30H
     
@@ -30,6 +32,9 @@ MAIN PROC
         MUL BX
         INC CX
     JMP FOR
+    
+    ZERO:
+        MOV AX, 1
         
     EXIT:
         ADD AX, 30H

@@ -35,12 +35,10 @@ int main(){
         putpixel(-x + xa, y + ya, RED);
         putpixel(x + xa, -y + ya, RED);
         putpixel(-x + xa, -y + ya, RED);
-		if (x != y){
-            putpixel(y + xa, x + ya, RED);
-            putpixel(-y + xa, x + ya, RED);
-            putpixel(y + xa, -x + ya, RED);
-            putpixel(-y + xa, -x + ya, RED);
-		}
+        putpixel(y + xa, x + ya, RED);
+        putpixel(-y + xa, x + ya, RED);
+        putpixel(y + xa, -x + ya, RED);
+        putpixel(-y + xa, -x + ya, RED);
 		delay(100);
 	}
 	getch();
